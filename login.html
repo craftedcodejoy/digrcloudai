@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تسجيل الدخول | موقع التكنولوجيا والربح من الإنترنت</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="night-mode">
+    <header>
+        <div class="logo">
+            <h1><a href="index.html">Tech & Profit</a></h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="blog.html">المدونة</a></li>
+                <li><a href="store.html">المتجر</a></li>
+                <li><a href="login.html" class="active">تسجيل الدخول</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="login">
+            <h2>تسجيل الدخول</h2>
+            <form onsubmit="return validateCode(event)">
+                <label for="referral-code">أدخل رمز الإحالة:</label>
+                <input type="text" id="referral-code" name="referral-code" required>
+                <button type="submit">دخول</button>
+                <p id="error-message" class="error"></p>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 موقع التكنولوجيا والربح من الإنترنت. جميع الحقوق محفوظة.</p>
+    </footer>
+    <script>
+        function validateCode(event) {
+            event.preventDefault();
+            const code = document.getElementById('referral-code').value;
+            const errorMessage = document.getElementById('error-message');
+            if (code === "1234") {
+                window.location.href = "member.html";
+            } else {
+                errorMessage.textContent = "رمز الإحالة غير صحيح.";
+            }
+        }
+    </script>
+</body>
+</html>
